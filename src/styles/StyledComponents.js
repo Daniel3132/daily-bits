@@ -32,3 +32,8 @@ width: 8%;
 export const btnEnviar = styled.input`
 width: 8%;
 `
+
+export const TitleLogOut = styled.h2`
+text-decoration: none;
+color: grey;
+`

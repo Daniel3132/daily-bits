@@ -31,3 +31,7 @@ button{
     width: 90%;
     color: #fffffe;
 }
+.btnLogOut{
+    margin-top: 7%;
+    width: fit-content;
+}

@@ -4,15 +4,15 @@ import { useNavigate } from 'react-router-dom'
 import Swal from 'sweetalert2'
 import { InputRadio, OpcionesDiv, TituloPreguntaDiv } from '../styles/StyledComponents.js'
 import EnviarData from '../helpers/EnviarData.js'
-import { StarRateSharp } from '@mui/icons-material'
 //import Main from '../containers/Main.js'
 
 
 const PruebaJS = () => {
 
-    const navigate = useNavigate()
+    const navigate = useNavigate() //para poner cambiar de componente desde el codigo
     const nombrePerfil = sessionStorage.getItem('nombre')
 
+    //state estadisticas
     const [stats, setStats] = useState({
         nombre: nombrePerfil,
         score: 0,
@@ -20,6 +20,7 @@ const PruebaJS = () => {
         totalAnsw: 0
     })
 
+    //state preguntas
     const [pregunta, setPregunta] = useState({
         numberQuestion: 0,
         question: {
@@ -33,6 +34,7 @@ const PruebaJS = () => {
         answerSelect: ''
     })
 
+    //accion que se realiza cuando carga el componente
     useEffect(() => {
         const currentQuizData = questionJS[pregunta.numberQuestion]
         setPregunta({
@@ -47,9 +49,10 @@ const PruebaJS = () => {
             }
         })
 
-    }, [stats.score, stats.wrong])
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [stats.score, stats.wrong]) //parametros que al cambiar van a realizar de nuevo el useEffect
 
-
+    //capturar la respuesta seleccionada
     const handleOnchange = e => {
         console.log(e.target.value)
         setPregunta({
@@ -58,11 +61,13 @@ const PruebaJS = () => {
         })
     }
 
+    //funcion para sumar preguntas contestadas, correctas e incorrectas
     const modificar = () => {
         setStats({
             ...stats,
             totalAnsw: stats.totalAnsw++
         })
+        //respuesta correcta
         if (pregunta.answerSelect === pregunta.question.correct) {
             Swal.fire({
                 position: 'bottom',
@@ -75,7 +80,7 @@ const PruebaJS = () => {
                 ...stats,
                 score: stats.score + 1
             })
-
+        //respuesta incorrecta
         } else {
             Swal.fire({
                 position: 'bottom',
@@ -94,9 +99,9 @@ const PruebaJS = () => {
 
     const handleSubmit = e => {
         e.preventDefault()
-        e.target.reset()
+        e.target.reset() //quitar la ultima opcion seleccionada
         modificar()
-
+        //fin de la prueba
         if (pregunta.numberQuestion === questionJS.length) {
             Swal.fire({
                 position: 'bottom',
@@ -105,7 +110,7 @@ const PruebaJS = () => {
                 showConfirmButton: false,
                 timer: 3000
             })
-            EnviarData({stats})
+            EnviarData({stats}) //enviar datos a heroku
             navigate('/home')
         }
 
@@ -116,19 +121,19 @@ const PruebaJS = () => {
     return (
         <>
             <div>
-                <form onSubmit={handleSubmit}>
+                <form onSubmit={handleSubmit}> {/* siempre debe ir el el form */}
                     <div >
                         <TituloPreguntaDiv>
                             <img width={'20%'} src={pregunta.question.d} alt='' />
                             <h2>{pregunta.question.question}</h2>
                         </TituloPreguntaDiv>
 
-                        <OpcionesDiv>
+                        <OpcionesDiv>{/* capturar la seleccion con handleOnchange */}
                             <InputRadio
                                 type="radio"
                                 name={`respuesta`}
                                 id={pregunta.question.a}
-                                onChange={handleOnchange}
+                                onChange={handleOnchange} 
                                 value={pregunta.question.a}
                             />
                             <label>{pregunta.question.a}</label>
@@ -158,6 +163,7 @@ const PruebaJS = () => {
 
                     <button
                         onClick={() => {
+                            //para cambiar de pregunta sin pasar el limite de preguntas
                             if (pregunta.numberQuestion < questionJS.length) {
                                 setPregunta({
                                     ...pregunta,

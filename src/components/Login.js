@@ -6,11 +6,13 @@ import GoogleIcon from '@mui/icons-material/Google';
 
 const Login = () => {
 
+    //para cambiar de ruta desde codigo
     const navigate = useNavigate()
 
     const responseGoogle = (response) => {
         console.log(response);
         console.log(response.profileObj.imageUrl) //datos del usuario estan en profileObj
+        //session storage es temporal
         sessionStorage.setItem('imagen',response.profileObj.imageUrl)
         sessionStorage.setItem('nombre',response.profileObj.name)
         sessionStorage.setItem('email',response.profileObj.email)
@@ -23,13 +25,15 @@ const Login = () => {
                 <img id='imgLogin' src='https://res.cloudinary.com/dcyn2bjb9/image/upload/v1648426707/samples/daily-bits/iconpurple_sgov9n.png' alt='' />
                 <h1> Iniciar sesión </h1>
                 <GoogleLogin //npm install react-google-login
-                    clientId="284784067134-blr6he4uh0aflsf7vt7udlucvsetaocu.apps.googleusercontent.com" //se genera desde google cloud platform y se asignan las url disponibles
+                    //se genera el id desde google cloud platform y se asignan las url disponibles
+                    clientId="284784067134-blr6he4uh0aflsf7vt7udlucvsetaocu.apps.googleusercontent.com" 
                     render={renderProps => ( //para poder crear el boton
                        <button onClick={renderProps.onClick } disabled={renderProps.disabled}><GoogleIcon/> Iniciar sesión con Google</button>
                     )}
                     buttonText="Login" //para el boton predeterminado de google pero aqui usamos custom button
                     onSuccess={responseGoogle} // funcion a ejecutar
                     onFailure={responseGoogle}
+                    isSignedIn={false}
                     cookiePolicy={'single_host_origin'}
                 />
                 <hr />

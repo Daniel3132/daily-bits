@@ -7,16 +7,18 @@ const Estadisticas = () => {
 
     const [Datos, setDatos] = useState([])
 
+    //funcion para traer la data de heroku
     const getData = () => {
         axios.get(urlHeroku)
             .then(response => {
-                setDatos(response.data)
+                setDatos(response.data) //asignar datos al estado Datos
             })
             .catch(error => {
                 console.log(error)
             })
     }
 
+    //se realiza cuando carga el componente
     useEffect(() => {
         getData()
     }, [])
@@ -38,6 +40,7 @@ const Estadisticas = () => {
                         <option> 30 dias</option>
                     </select>
                 </span>
+                {/* recorrer los datos con map (asignar key en el padre) */}
                 {Datos.map(dato => (
                     <div key={dato.id} className='tablasCont'>
 
