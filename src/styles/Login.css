@@ -1,0 +1,33 @@
+#login {
+    margin: 8% auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 95vw;
+    font-size: small;
+    line-height: 2.5rem;
+}
+#imgLogin  {
+    width: 80px;
+    height: 80px;
+}
+a{
+    color: #2cb67d;
+}
+.linkLogin{
+    text-decoration: none;
+    color: white;
+}
+button,input{
+    border: none;
+    border-radius: 6px;
+    width: 90%;
+    height: 2rem;
+    font: 600 0.875rem/1rem Nunito;
+}
+button{
+    background-color: #ef4565;
+    width: 90%;
+    color: #fffffe;
+}

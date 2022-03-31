@@ -1,0 +1,129 @@
+:root {
+    --white: #fffffe;
+    --black: #16161a;
+    --primary: #7f5af0;
+    --secondary: #a786df;
+    --tertiary: #72757e;
+    --green: #2cb67d;
+    --grey: #94a1b2;
+    --purple: #6b47dc;
+    --neutral: #232e35;
+    --red: #ef4565;
+    --subtitle2: 600 0.75rem/normal Nunito;
+    --headline-headline1: extrabold 1.5rem/normal Nunito;
+    --headline-headline2: 700 1.375rem/normal Nunito;
+    --subtitle-subtitle1: 600 1.125rem/normal Nunito;
+    --body1-regular: 400 1rem/1.5rem Nunito;
+    --body1-bold: 700 1rem/1.5rem Nunito;
+    --body2-regular: 400 0.875rem/normal Nunito;
+    --body2-bold: 700 0.875rem/normal Nunito;
+    --button-button: 600 0.875rem/1rem Nunito;
+    --caption-caption: 400 0.6875rem/normal Nunito;
+
+}
+
+body {
+    color: var(--white);
+    background-color: var(--black);
+    font: var(--body1-regular);
+    text-align: center;
+}
+
+.categoriasDiv {
+    margin: 3%;
+}
+
+.circunferencias {
+    margin: 10%;
+}
+
+.circunferencias div {
+    margin: 5%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.circunferencias .filas {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 5%;
+}
+
+.imgPlusLabel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.estadisticas,
+.perfil {
+    text-align: left;
+    margin: 3%;
+}
+
+.infoPerfil {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0;
+}
+
+.infoPerfil img {
+    border-radius: 100%;
+}
+
+.tablasCont {
+    margin-top: 5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.infoConts {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    border: 1px solid var(--white);
+    margin-bottom: 5%;
+    height: 3rem;
+    border-radius: 8px;
+}
+
+.infoConts .correcta {
+    color: var(--green);
+}
+
+.infoConts .incorrecta {
+    color: var(--red);
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    width: 100vw;
+    height: 17vh;
+    background-color: var(--neutral);
+    color: var(--white);
+}
+
+footer a {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    margin: 0;
+}
+
+footer img {
+    width: 2.2rem;
+    color: white;
+}
