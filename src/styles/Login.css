@@ -22,14 +22,24 @@ a{
 button,input{
     border: none;
     border-radius: 6px;
-    width: 90%;
-    height: 2rem;
+    width: 69%;
+    height: 2.5rem;
     font: 600 0.875rem/1rem Nunito;
 }
+input{
+    padding: 0 1rem;
+}
 button{
+    display: flex;
+    height: fit-content;
+    align-items: center;
+    text-align: center;
+    gap: 1rem;
     background-color: #ef4565;
-    width: 90%;
+    width: fit-content;
+    padding: .8rem 2.5rem;
     color: #fffffe;
+    margin-top: 2rem;
 }
 .btnLogOut{
     margin-top: 7%;

@@ -36,10 +36,10 @@ const Login = () => {
                     isSignedIn={false}
                     cookiePolicy={'single_host_origin'}
                 />
+                <label> O </label>
                 <label> Correo Electronico </label>
                 <input type='email' placeholder='Inserte su Correo Electronico' />
                 <Link to="/Login" > ¿Se te olvido tu contraseña ? </Link>
-                <p> ¿Aun no tienes una cuenta? <Link to="#"> Inscribirse aqui</Link> </p>
             </div>
         </>
     )
