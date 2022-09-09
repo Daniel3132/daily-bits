@@ -113,8 +113,6 @@ const PruebaJS = () => {
             EnviarData({stats}) //enviar datos a heroku
             navigate('/home')
         }
-
-
     }
 
 

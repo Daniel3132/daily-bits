@@ -10,10 +10,14 @@ const Categorias = () => {
                     <p>Practica tu conocimiento en la categoria que prefieras</p>
                 </div>
                 <div className='circunferencias'>
-                    <div  className='imgPlusLabel'>
+                    
+                    <div className="filas">
+                    <div className='imgPlusLabel'>
                         <Link to=''><img src='https://res.cloudinary.com/dcyn2bjb9/image/upload/v1648436160/samples/daily-bits/Ellipse_9_osnjmp.png' alt='' /></Link>
                         <label>HTML</label>
                     </div>
+                    </div>
+                                        
 
                     <div className='filas'>
                         <div className='imgPlusLabel'>
