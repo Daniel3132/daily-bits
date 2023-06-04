@@ -17,7 +17,6 @@ const Perfil = () => {
     }
 
     return (
-
         <>
             <div className='perfil'>
                 <p>Perfil</p>
@@ -33,7 +32,8 @@ const Perfil = () => {
                             clientId="284784067134-blr6he4uh0aflsf7vt7udlucvsetaocu.apps.googleusercontent.com"
                             isSignedIn={false}
                             onLogoutSuccess={logOut}
-                        ><TitleLogOut>Cerrar sesión</TitleLogOut>
+                        >
+                            <TitleLogOut>Cerrar sesión</TitleLogOut>
                         </GoogleLogout>
                     </Link>
                 </center>

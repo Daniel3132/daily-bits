@@ -34,7 +34,7 @@ export const questionJS = [
     {
         question: "¿Que tegnologías pretenece al MEVN Stack?",
         a: "Angular",
-        b: "Vue.js" ,
+        b: "Vue.js",
         c: "Node.js",
         d: "https://res.cloudinary.com/dcyn2bjb9/image/upload/v1648426707/samples/daily-bits/Property_1_Windows_pc516n.png",
         correct: "Vue.js"
