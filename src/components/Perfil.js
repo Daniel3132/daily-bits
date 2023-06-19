@@ -2,7 +2,6 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import Footer from './Footer'
 import { GoogleLogout } from 'react-google-login';
-import { TitleLogOut } from '../styles/StyledComponents';
 
 const Perfil = () => {
 
@@ -33,7 +32,7 @@ const Perfil = () => {
                             isSignedIn={false}
                             onLogoutSuccess={logOut}
                         >
-                            <TitleLogOut>Cerrar sesión</TitleLogOut>
+                            Cerrar sesión
                         </GoogleLogout>
                     </Link>
                 </center>
