@@ -8,41 +8,65 @@
     font-size: small;
     line-height: 2.5rem;
 }
-#imgLogin  {
+
+#imgLogin {
     width: 80px;
     height: 80px;
 }
-a{
-    color: #2cb67d;
+
+a {
+    color: var(--green);
 }
-.linkLogin{
+
+.linkLogin {
     text-decoration: none;
     color: white;
 }
-button,input{
+
+button,
+input {
     border: none;
     border-radius: 6px;
     width: 69%;
     height: 2.5rem;
     font: 600 0.875rem/1rem Nunito;
 }
-input{
+
+input {
     padding: 0 1rem;
+    border-radius: 8px 0 0 8px;
 }
-button{
+
+button {
     display: flex;
-    height: fit-content;
     align-items: center;
     text-align: center;
     gap: 1rem;
-    background-color: #ef4565;
+    background-color: var(--red);
     width: fit-content;
-    padding: .8rem 2.5rem;
-    color: #fffffe;
+    color: var(--white);
     margin-top: 2rem;
+    cursor: pointer;
+    padding: 0 1rem;
 }
-.btnLogOut{
-    margin-top: 7%;
+
+.usernameForm {
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: row;
+}
+
+.confirmUsernameBtn {
+    margin: 0;
+    height: 2.5rem;
+    padding: 0 1rem;
+    border-radius: 0 8px 8px 0;
+    background-color: var(--purple);
+}
+
+.btnLogOut {
     width: fit-content;
-    height: 3rem;
+    height: fit-content;
+    display: flex;
+    gap: 0;
 }

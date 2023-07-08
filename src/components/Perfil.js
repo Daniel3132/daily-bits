@@ -2,12 +2,13 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import Footer from './Footer'
 import { GoogleLogout } from 'react-google-login';
+import profileAvatar from "../assets/profile-avatar.png";
 
 const Perfil = () => {
 
-    const imgPerfil = sessionStorage.getItem('imagen')
     const nombrePerfil = sessionStorage.getItem('nombre')
-    const emailPerfil = sessionStorage.getItem('email')
+    const emailPerfil = sessionStorage.getItem('email') !== "" ? sessionStorage.getItem('email') : ""
+    const imgPerfil = sessionStorage.getItem('imagen') !== "" ? sessionStorage.getItem('imagen') : profileAvatar 
 
     const logOut = () => {
         sessionStorage.setItem('imagen', '')
@@ -18,10 +19,10 @@ const Perfil = () => {
     return (
         <>
             <div className='perfil'>
-                <p>Perfil</p>
+                <h2>Perfil</h2>
                 <div className='infoPerfil'>
-                    <img src={imgPerfil} alt='' />
-                    <h4>{nombrePerfil}</h4>
+                    <img src={imgPerfil} width={50} style={{backgroundColor: "white"}} alt='' />
+                    <h3>{nombrePerfil}</h3>
                     <p>{emailPerfil}</p>
                 </div>
                 <center>
@@ -32,7 +33,7 @@ const Perfil = () => {
                             isSignedIn={false}
                             onLogoutSuccess={logOut}
                         >
-                            Cerrar sesión
+                           <strong>Cerrar sesión</strong> 
                         </GoogleLogout>
                     </Link>
                 </center>

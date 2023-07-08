@@ -29,7 +29,7 @@ body {
     text-align: center;
 }
 
-button{
+button {
     margin: 0 auto;
 }
 
@@ -138,8 +138,8 @@ footer img {
     color: white;
 }
 
-.btnTerminar{
+.btnTerminar {
     margin: 40vh auto 0;
     align-self: center;
-    background-color: var(--primary) ;
+    background-color: var(--primary);
 }
